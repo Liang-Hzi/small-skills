@@ -237,3 +237,15 @@ drwxrwxr-x+ 4 mzoodsma clusers 4096 Apr 22 17:14 fastq_pools4_5/
 -rwxr-xr-x+ 1 mzoodsma clusers  452 Apr 22 16:00 makefq.sh*
 -rw-r--r--+ 1 mzoodsma clusers   91 Apr 22 16:28 samplesheet.csv
 aalaswas@bioinf001:/vol/projects/CIIM/IBD/scATAC$ rm l*
+
+aalaswas@bioinf001:/vol/projects/CIIM/IBD/scATAC$ vi count4.sh
+aalaswas@bioinf001:/vol/projects/CIIM/IBD/scATAC$ ll
+aalaswas@bioinf001:/vol/projects/CIIM/IBD/scATAC$ qsub count4.sh  qstat 
+aalaswas@bioinf001:/vol/projects/CIIM/IBD/scATAC$ cat log.count.err
+aalaswas@bioinf001:/vol/projects/CIIM/IBD/scATAC$ vim count4.sh 
+aalaswas@bioinf001:/vol/projects/CIIM/IBD/scATAC$ qsub count4.sh 
+aalaswas@bioinf001:/vol/projects/CIIM/IBD/scATAC$ tail log.count.out 
+
+aalaswas@bioinf001:/vol/projects/CIIM/IBD/scATAC$ vim count5.sh 
+aalaswas@bioinf001:/vol/projects/CIIM/IBD/scATAC$ cat count5.sh 
+aalaswas@bioinf001:/vol/projects/CIIM/IBD/scATAC$ tail log.count.out
