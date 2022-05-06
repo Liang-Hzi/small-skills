@@ -249,3 +249,29 @@ aalaswas@bioinf001:/vol/projects/CIIM/IBD/scATAC$ tail log.count.out
 aalaswas@bioinf001:/vol/projects/CIIM/IBD/scATAC$ vim count5.sh 
 aalaswas@bioinf001:/vol/projects/CIIM/IBD/scATAC$ cat count5.sh 
 aalaswas@bioinf001:/vol/projects/CIIM/IBD/scATAC$ tail log.count.out
+
+#! /bin/bash
+
+#$ -N scATAC_count
+#$ -l arch=linux-x64
+#$ -pe multislot 16
+#$ -b n
+#$ -i /dev/null
+#$ -o log.count.out
+#$ -e log.count.err
+#$ -q all.q
+#$ -l vf=4G
+#$ -cwd
+
+export PATH=/vol/projects/CIIM/resources/tools/cellranger-atac-2.0.0:$PATH
+export PATH=/vol/biotools/bin:$PATH
+
+cellranger-atac --version
+
+  cellranger-atac count --id=atac4 \
+  --reference=/vol/projects/CIIM/refs/refdata-cellranger-arc-GRCh38-2020-A-2.0.0 \
+  --fastqs=/vol/projects/CIIM/IBD/scATAC/fastq_pools4_5/outs/fastq_path/HTKCMDRXY/atac4 \
+  --sample=atac4 \
+  --localmem=60 \
+  --localcores=8 \
+  --chemistry=ARC-v1
